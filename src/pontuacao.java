@@ -7,7 +7,7 @@ public class pontuacao {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		int quantidadedecompras, quantidadedeatrasos,pontosdecompras;
+		int quantidadedecompras, quantidadedeatrasos,pontosdecompras, scoredeinadimplencia=0, scoredepagamento,pontosqueforamganhados=0;
 		double ticketmedio;
 		char formadepagamento;
 
@@ -59,8 +59,41 @@ public class pontuacao {
 			pontosdecompras = 0;
 		}
 			
+		System.out.println();
+		
+		// SCORE DE INADIMPLENCIA E PAGAMENTO //
+		
+		System.out.println();
+
+		if (quantidadedeatrasos > 1 || quantidadedecompras == 0) {
+			scoredeinadimplencia	 = 0;
+		}
+		else if (quantidadedecompras > 0 && quantidadedeatrasos == 1) {
+			scoredeinadimplencia = 15;
+		}
+		if (quantidadedecompras > 0 && quantidadedeatrasos == 0) {
+			scoredeinadimplencia = 30;
+		}
+
+		System.out.println("Score de inadimplência = " + scoredeinadimplencia + " pontos");
+			
+		if (quantidadedecompras > 0 && formadepagamento == 'd' || formadepagamento == 'D') {
+			pontosqueforamganhados = 5;
+		}
+		if (quantidadedecompras > 0 && formadepagamento == 'c' || formadepagamento == 'C' || formadepagamento == 'b' || formadepagamento == 'B') {
+			pontosqueforamganhados  = 10;
+		}
+		System.out.println("Score de forma de pagamento = " + pontosqueforamganhados  + " pontos");
+		
+			
+			
+			
+		
+		
 		
 		sc.close();
 	}
-}
+
+	}
+	
 
