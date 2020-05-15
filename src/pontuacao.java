@@ -7,7 +7,7 @@ public class pontuacao {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		int quantidadedecompras, quantidadedeatrasos,pontosdecompras, scoredeinadimplencia=0, scoredepagamento,pontosqueforamganhados=0;
+		int quantidadedecompras, quantidadedeatrasos,pontosdecompras, scoredeinadimplencia=0, scoredepagamento,pontosqueforamganhados=0,total=0;
 		double ticketmedio;
 		char formadepagamento;
 
@@ -87,7 +87,19 @@ public class pontuacao {
 		
 			
 			
-			
+			//CLASSIFICAÇAO FINAL//
+		
+		System.out.println();
+		total = pontosdecompras + scoredeinadimplencia + pontosqueforamganhados;
+		if (total <= 25) {
+			System.out.println("Classificação final = CLIENTE BRONZE");
+		}
+		else if (total > 25 && total < 75.1) {
+			System.out.println("Classificação final = CLIENTE PRATA");
+		}
+		if (total > 75) {
+			System.out.println("Classificação final = CLIENTE OURO");
+		}
 		
 		
 		
