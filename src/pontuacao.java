@@ -7,9 +7,9 @@ public class pontuacao {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		
-		int quantidadedecompras;
+		int quantidadedecompras,quantidadedeatrasos;
 		double ticketmedio;
-		
+		char formadepagamento;
 		
 		// CABEÇALHO //
 		
@@ -25,6 +25,14 @@ public class pontuacao {
 		System.out.printf("Qual o ticket médio?");
 		ticketmedio = sc.nextDouble();
 
+		
+		// LEITURA DOS OUTROS DADOS //
+		
+		System.out.println();
+		System.out.printf("Quantas vezes o cliente atrasou o pagamento?");
+		quantidadedeatrasos = sc.nextInt();
+		System.out.printf("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)?");
+		formadepagamento = sc.next().charAt(0);
 		
 		sc.close();
 	}
